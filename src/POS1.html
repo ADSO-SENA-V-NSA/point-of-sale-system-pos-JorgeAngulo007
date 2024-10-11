@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Dashboard</title>
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(../pagos.jfif);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.7; /* 70% opacity */
+            z-index: -1; /* Send the background behind the content */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Left side: Logo and Title -->
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <img class="h-8 w-auto" src="../logo_bank_dash-.png" alt="Logo">
+                    </div>
+                    <!-- Title -->
+                    <div class="ml-4">
+                        <span class="font-bold text-xl text-gray-800">Bank<span class="text-blue-600">Dash.</span></span>
+                    </div>
+                </div>
+
+                <!-- Right side: Search, Settings, Notification and Profile -->
+                <div class="flex items-center">
+                    <!-- Search box -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search for something" class="border rounded-full px-4 py-2 focus:outline-none focus:ring focus:border-blue-300">
+                    </div>
+
+                    <!-- Settings icon -->
+                    <button class="ml-4 text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-6 0H4m2 0h4m2-6V4m0 2v4m6 0h2m-2 0h-4m0 2h4m-4 0v4m2 2h-4m2-6h2m-2 4H4m4 2v4m4 0v4m6-10h2m-2 0h-4"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Notification icon -->
+                    <button class="ml-4 text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.729 17.731a4.5 4.5 0 01-9 0m-3.179-9.366a1 1 0 00-.33 1.143l.528 1.431c.142.386.211.799.205 1.212L2.5 18a1 1 0 001 1h17a1 1 0 001-1v-1.449a6.5 6.5 0 00-3.6-5.935l-1.674-1.486A1 1 0 0015.5 9h-7a1 1 0 00-.858.481L6.032 10H6"></path>
+                        </svg>
+                    </button>
+
+                    <!-- User profile picture -->
+                    <div class="ml-4">
+                        <img class="h-8 w-8 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/64.jpg" alt="User Avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="flex min-h-screen">
+                <!-- Sidebar -->
+        <div class="w-1/5 bg-white p-6 shadow-lg">
+            <ul class="space-y-6">
+                <!-- Dashboard -->
+                <li class="flex items-center space-x-4 text-blue-600 font-semibold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18m-7 5h7" />
+                    </svg>
+                    <a href="#">Dashboard</a>
+                </li>
+                
+                <!-- Transactions -->
+                <li class="flex items-center space-x-4 text-gray-600 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <a href="#">Transactions</a>
+                </li>
+
+                <!-- Accounts -->
+                <li class="flex items-center space-x-4 text-gray-600 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18v10H3V10zm0-4h18v2H3V6zm3 8h12v6H6v-6z" />
+                    </svg>
+                    <a href="#">Accounts</a>
+                </li>
+
+                <!-- Investments -->
+                <li class="flex items-center space-x-4 text-gray-600 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-2.28 0-4 1.76-4 4 0 2.28 1.76 4 4 4 2.28 0 4-1.76 4-4 0-2.28-1.76-4-4-4zm0 0c-2.28 0-4 1.76-4 4m4 4c2.28 0 4-1.76 4-4m-4-4c-2.28 0-4 1.76-4 4m4 4c2.28 0 4-1.76 4-4m4 4V8m0 0V4m0 4h4m-4 0H4m8 0V4m0 0h4m-4 0H4" />
+                    </svg>
+                    <a href="#">Investments</a>
+                </li>
+
+                <!-- Credit Cards -->
+                <li class="flex items-center space-x-4 text-gray-600 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8h18M3 16h18m-10 4h6m-6 0H5" />
+                    </svg>
+                    <a href="#">Credit Cards</a>
+                </li>
+
+                <!-- Loans -->
+                <li class="flex items-center space-x-4 text-gray-600 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v16h16V4H4zm4 8l4 4 4-4m0 0V8m-4 4l-4-4" />
+                    </svg>
+                    <a href="#">Loans</a>
+                </li>
+
+                <!-- Settings -->
+                <li class="flex items-center space-x-4 text-gray-600 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 12h2m-2 4h2m-2-8h2m7.995 5A8.964 8.964 0 0012 4.005M4.005 12A8.964 8.964 0 0012 19.995M12 4.005c5 0 9 4 9 9m-9 9c-5 0-9-4-9-9" />
+                    </svg>
+                    <a href="#">Settings</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Main content -->
+        <div class="w-4/5 p-10">
+            <div class="grid grid-cols-2 gap-6">
+                <!-- Cards Section -->
+                <div class= "col-span-2 grid grid-cols-3 gap-6 bg-slate-500">
+                    <div class="col-span-3">
+                        <span class="text-blue-800 text-2xl font-bold">My Cards</span>
+                    </div>
+                    <div class="bg-gradient-to-t from-blue-500 to-blue-900 text-white p-6 rounded-lg">
+                        <h3 class="text-xl">Balance: $5,756</h3>
+                        <p class="mt-2">Card Holder: Eddy Cusuma</p>
+                        <p>Card Number: 3778 **** 1234</p>
+                    </div>
+                    <div class="bg-blue-100 text-blue-500 p-6 rounded-lg">
+                        <h3 class="text-xl">Balance: $5,756</h3>
+                        <p class="mt-2">Card Holder: Eddy Cusuma</p>
+                        <p>Card Number: 3778 **** 1234</p>
+                    </div>
+                      <div class="max-w-sm mx-auto bg-white rounded-lg shadow-md p-4">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Recent Transaction</h2>
+                        <div class="space-y-4">
+                            <!-- Transacción 1 -->
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="bg-yellow-100 text-yellow-600 p-2 rounded-full">
+                                        <!-- Icono de tarjeta -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5V6a2.25 2.25 0 00-2.25-2.25h-13.5A2.25 2.25 0 003 6v1.5M21 7.5v9A2.25 2.25 0 0118.75 18.75h-13.5A2.25 2.25 0 013 16.5v-9M21 7.5H3M7.5 12h9" />
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-700 font-medium">Deposit from my Card</p>
+                                        <p class="text-sm text-gray-400">28 January 2021</p>
+                                    </div>
+                                </div>
+                                <p class="text-red-500 font-semibold">-$850</p>
+                            </div>
+                    
+                            <!-- Transacción 2 -->
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="bg-blue-100 text-blue-600 p-2 rounded-full">
+                                        <!-- Icono de Paypal -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75c4.556 0 7.5 2.566 7.5 6.75S16.556 17.25 12 17.25m0 0c-4.556 0-7.5-2.566-7.5-6.75S7.444 3.75 12 3.75M12 17.25v3" />
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-700 font-medium">Deposit Paypal</p>
+                                        <p class="text-sm text-gray-400">25 January 2021</p>
+                                    </div>
+                                </div>
+                                <p class="text-green-500 font-semibold">+$2,500</p>
+                            </div>
+                    
+                            <!-- Transacción 3 -->
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="bg-green-100 text-green-600 p-2 rounded-full">
+                                        <!-- Icono de usuario -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM21 20.25a8.25 8.25 0 10-16.5 0" />
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-700 font-medium">Jemi Wilson</p>
+                                        <p class="text-sm text-gray-400">21 January 2021</p>
+                                    </div>
+                                </div>
+                                <p class="text-green-500 font-semibold">+$5,400</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>                
+
+                <!-- Weekly Activity and Expense Stats -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl mb-4">Weekly Activity</h3>
+                    <div class="h-48">
+                        <!-- Your graph component -->
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl mb-4">Expense Statistics</h3>
+                    <div class="h-48">
+                        <!-- Your pie chart component -->
+                    </div>
+                </div>
+
+                <!-- Quick Transfer and Balance History -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl mb-4">Quick Transfer</h3>
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/40" alt="Livia" class="rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold">Livia Bator</p>
+                            <p class="text-gray-500">CEO</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="text" class="flex-1 border rounded p-2" placeholder="Write Amount">
+                        <button class="bg-blue-500 text-white p-2 rounded ml-2">Send</button>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl mb-4">Balance History</h3>
+                    <div class="h-48">
+                        <!-- Your line chart component -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
